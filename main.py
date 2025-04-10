@@ -32,7 +32,7 @@ def guess_mime_type(filename: str) -> str:
 
 @app.post("/chat")
 async def chat(prompt: str = Form(...), image: UploadFile = File(None)):
-    model = GenerativeModel(model_name="models/gemini-1.5-flash")
+    model = GenerativeModel(model_name="models/gemini-2.0-flash")
 
     if image:
         image_bytes = await image.read()
